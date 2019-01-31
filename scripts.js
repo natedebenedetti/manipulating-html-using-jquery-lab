@@ -38,10 +38,10 @@ $(document).ready(function () {
     //step 5. button, empty div, and event listener created in using jquery that creates span with my name in it when the button is clicked.
     $('<button id=btn3>Add-a-span</button>').appendTo('#btnDiv');
     $('<div id=spanDiv></div>').appendTo('body');
-    $('#spanDiv').css({ display: 'flex', justifyContent: 'center'});
+    $('#spanDiv').css({ display: 'block', textAlign: 'center'});
 
     $('#btn3').click(function () {
-        $('<span id=nameSpan>Nate DeBenedetti</span>').css('color', '' + randomColor() + '').appendTo('#spanDiv');
+        $('<span id=nameSpan>Nate DeBenedetti</span>').css({display: 'block', color: '' + randomColor() + ''}).appendTo('#spanDiv');
         
     });
 
