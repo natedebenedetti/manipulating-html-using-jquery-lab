@@ -3,7 +3,6 @@ $(document).ready(function () {
     //using jquery to do everything that was done using Vanilla JS in other lab
 
     // step 1. Creates button without using HTML adds a label to the button and some styling and uses evenet listener to alert when button clicked.
-    $('<div id=btnDiv></div>').appendTo('body'); 
     $('#btnDiv').css({display: 'flex', justifyContent: 'center', margin: '3em'});
     $('<button id=btn1>This Will Alert!</button>').appendTo('#btnDiv');
     $('#btn1').click(function () {
@@ -38,10 +37,12 @@ $(document).ready(function () {
 
     //step 5. button, empty div, and event listener created in using jquery that creates span with my name in it when the button is clicked.
     $('<button id=btn3>Add-a-span</button>').appendTo('#btnDiv');
+    $('<div id=spanDiv></div>').appendTo('body');
+    $('#spanDiv').css({ display: 'flex', justifyContent: 'center'});
 
     $('#btn3').click(function () {
-        $('<span id=spanDiv>Nate DeBenedetti</div>').appendTo('body');
-        $('#spanDiv').css({ alignItems: 'center', textAlign: 'center', color: '' + randomColor() + '' });
+        $('<span id=nameSpan>Nate DeBenedetti</span>').css('color', '' + randomColor() + '').appendTo('#spanDiv');
+        
     });
 
 
