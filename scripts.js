@@ -3,7 +3,7 @@ $(document).ready(function () {
     //using jquery to do everything that was done using Vanilla JS in other lab
 
     // step 1. Creates button without using HTML adds a label to the button and some styling and uses evenet listener to alert when button clicked.
-    $('#btnDiv').css({display: 'flex', justifyContent: 'center', margin: '3em'});
+    $('#btnDiv').css({ display: 'flex', justifyContent: 'center', margin: '3em' });
     $('<button id=btn1>This Will Alert!</button>').appendTo('#btnDiv');
     $('#btn1').click(function () {
         alert('I WARNED YOU!');
@@ -28,7 +28,7 @@ $(document).ready(function () {
         $('#p1').text("I didn't necessarily lie, I will turn red............eventually").css({ color: '' + randomColor() + '' });
     });
 
-    function randomColor() {
+    function randomColor() { 
         let R = Math.floor(Math.random() * 245);
         let G = Math.floor(Math.random() * 250);
         let B = Math.floor(Math.random() * 255);
@@ -39,11 +39,24 @@ $(document).ready(function () {
     $('<button id=btn3>Add-a-span</button>').appendTo('#btnDiv');
     $('<div id=spanDiv></div>').appendTo('body');
     $('#spanDiv').css({ display: 'block', textAlign: 'center'});
-
+    
     $('#btn3').click(function () {
         $('<span id=nameSpan>Nate DeBenedetti</span>').css({display: 'block', color: '' + randomColor() + ''}).appendTo('#spanDiv');
         
     });
+
+    //step 6. Array created in jquery and linked to button and ul created in HTML.
+    let friendsArr = ['Matt', 'Dustin', 'Brooks', 'Jason', 'Alex', 'Jordan', 'Todd', 'John', 'Bob', 'Jack'];
+
+    $('#listBtn').click(function () {
+        for (f = 0; f < friendsArr.length; f ++) {
+        $('<li>' + friendsArr[f] + '</li>').appendTo('#list').css({ margin: '3em', color: '' + randomColor() + '' });
+        $('#list').css({ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' });
+        
+        }
+
+    });
+    
 
 
 
